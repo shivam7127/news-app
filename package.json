@@ -2,7 +2,7 @@
   "name": "news",
   "version": "0.1.0",
   "private": true,
-  "proxy" : "https://newsapi.org/v2/everything?q=${props.q}&language=${props.language}&page=${page}&sortBy=publishedAt&apiKey ="
+  "proxy" : "https://newsapi.org/v2/everything?q=q&language=language&page=${page}&sortBy=publishedAt&apiKey="
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
