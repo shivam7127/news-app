@@ -9,7 +9,7 @@ function Home(props) {
     let [page , setpages] = useState(1)
     let  API_KEY  =  process.env.REACT_APP_API_KEY
     async function getAPIData() {
-        let response = await fetch(`https://newsapi.org/v2/everything?q=${props.q}&language=${props.language}&page=${page}&sortBy=publishedAt&apiKey=${API_KEY}`)
+        let response = await fetch(`/v2/everything?q=${props.q}&language=${props.language}&page=${page}&sortBy=publishedAt&apiKey=${API_KEY}`)
         response =await response.json()
         if(response.status === "ok"){
             setArticles(response.articles)
@@ -18,7 +18,7 @@ function Home(props) {
     } 
     let  fetchData =async()=>{
         setpages(page +1)
-        let response = await fetch(`https://newsapi.org/v2/everything?q=${props.q}&language=${props.language}&page=${page}&sortBy=publishedAt&apiKey=${API_KEY}`)
+        let response = await fetch(`/v2/everything?q=${props.q}&language=${props.language}&page=${page}&sortBy=publishedAt&apiKey=${API_KEY}`)
         response = await response.json()
         if(response.status === "ok"){
             setArticles(articles.concat(response.articles))
